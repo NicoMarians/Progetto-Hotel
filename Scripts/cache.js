@@ -33,14 +33,12 @@ function upload(valore) {
                     key: 'c6423649-0f5c-40c4-9bba-ee114eba20af',
                 },
                 body: JSON.stringify({
-                    key: 'seriea',
+                    key: 'progettiHotel',
                 }),
             }).then((response) => response.json()).
             then((r) => resolve(r.result));
         } catch {
             reject()
         }
-
-  });
-        
+    });     
   }
