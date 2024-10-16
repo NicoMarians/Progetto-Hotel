@@ -20,5 +20,7 @@ const createForm = (elemento) =>{
         },
     }
 }
-
+const form=createForm(divForm);
+form.onsubmit(console.log);
+form.render();
 //La tebellla avra' una lista del genere: [["data","singola","doppia","suite"],[data d]]
