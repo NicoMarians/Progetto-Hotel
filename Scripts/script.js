@@ -1,3 +1,3 @@
 
 
-setInterval(download,10000);
+setInterval(download,1000);
