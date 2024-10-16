@@ -18,7 +18,6 @@ const createForm = (elemento) =>{
                 callback(data);
             }
         },
-        render:() => {}
     }
 }
 
