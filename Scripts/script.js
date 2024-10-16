@@ -1,8 +1,8 @@
 class Rooms {
-    constructor(){
-        this.singola = 100;
-        this.doppia = 50;
-        this.suite = 20;
+    constructor(singola,doppia,suite){
+        this.singola = singola;
+        this.doppia = doppia;
+        this.suite = suite;
     }
     checkRoomAvaliability = (singola,doppia,suite) => {
         let error = false;
