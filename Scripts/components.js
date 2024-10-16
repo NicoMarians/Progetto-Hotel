@@ -1,7 +1,8 @@
-const divForm=document.getElementById("form");
-const divTable=document.getElementById("table");
-const createForm=(elemento) =>{
-    let arrayElement;
+const divForm=document.getElementById("divForm");
+const divTable=document.getElementById("divTable");
+
+const createForm = (elemento) =>{
+    let arrayElementi;
     let callback=null;
     return{
         setLables: (lables)=>{arrayElementi=lables;},
@@ -12,5 +13,8 @@ const createForm=(elemento) =>{
             const button=documen.getElementById("button");
             button.onclick
         },
+        render:() => {}
     }
 }
+
+//La tebellla avra' una lista del genere: [["data","singola","doppia","suite"],[data d]]

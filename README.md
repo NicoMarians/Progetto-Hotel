@@ -1,23 +1,22 @@
 # Progetto-Hotel
 Progetto Hotel del 15-10-2024
 questo progetto prevede una pag che contiene tabella 
-data
-singola
-doppia
-suite
+[data,singola,doppia,suite]
 
-stessa pagina anche camere libere (disponibilità) 
-2 scritture dati
-disponibilità totali ed effettive
+data e' la data di oggi (va fino a 30 giorni dopo)
+singola e' il numero di camere singole libere
+doppia e' il numero di camere doppie
+suite e' il numero di camere suite
 
+Form a destra della pagina che permette di fare prenotazioni
 
-form con opzioni data singola doppia suite e bottone submit
+EXTRA (opzionale)
+I vaolri dentro la tabella sono bottoni, se premi la data ti imposta automaticamente la data nella form, se premi
+una camera ti aggiunge una di quelle camere alla form.
 
-label se non è possibili prenotare
+bottone submit sotto
 
-stampare 30 giorni da oggi
-
-gestire date lo famo noi con libreria date
+Gestiamo le date con la libreria di javascript
 
 1)gestire date con date (documentazione)
 2)gestione struttura dati delle prenotazioni (array diz)
