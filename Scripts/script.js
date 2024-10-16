@@ -10,7 +10,7 @@ class Rooms {
         if (doppia > this.doppia) {alert("Non ci sono abbastanza camere singole in questa data");error = true;}
         if (suite > this.suite) {alert("Non ci sono abbastanza camere singole in questa data");error = true;}
 
-        if (!error) this.singola -= singola; this.doppia -= doppia; this.suite -= suite;
+        if (!error) {this.singola -= singola; this.doppia -= doppia; this.suite -= suite;}
     }
 }
 
