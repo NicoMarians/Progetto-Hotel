@@ -14,15 +14,15 @@ const createForm = (elemento) =>{
             const button=documen.getElementById("button");
             button.onclick=() => {
                 bindingElement=arrayElement.map((element)=>document.getElementById(element[0]));
-                data=bindingElement.map((element)=>element.value);
+                data= bindingElement.map((element)=>element.value);
                 callback(data);
             }
         },
     }
 }
-const form=createForm(divForm);
-form.onsubmit(console.log);
-form.render();
+
+
+
 //La tebellla avra' una lista del genere: [["data","singola","doppia","suite"],[...]]
 
 const createTable = (parentElement) => {
@@ -45,6 +45,11 @@ const createTable = (parentElement) => {
     };
 };
 
+
+const form=createForm(divForm);
 const table = createTable(document.querySelector('#table'));
+
+form.onsubmit(console.log);
+form.render();
+
 table.build([['Data', 'Singola', 'Doppia', 'Suite']]);
-table.render();
