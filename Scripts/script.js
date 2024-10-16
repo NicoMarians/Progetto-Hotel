@@ -8,5 +8,5 @@ const checkRoomAvaliability = (singola,doppia,suite) => {
 
 setInterval(() => {
     download();
-    form.render();
+    //table.render();
 },1000);
