@@ -1,6 +1,10 @@
 const divForm=document.getElementById("divForm");
 const divTable=document.getElementById("divTable");
 
+const today = new Date();
+let todayString = today.toLocaleDateString(); //   DD/MM/YYYY
+//let monthString = today+30;
+
 const createForm = (elemento) =>{
     let arrayElement=[["data","date"],["singola","number"],["doppia","number"],["suite","number"]];
     let bindingElement;
@@ -17,6 +21,10 @@ const createForm = (elemento) =>{
                 data= bindingElement.map((element)=>element.value);
                 callback(data);
             }
+            console.log(today.getDate());
+            //document.getElementById("data").min = today.getFullYear.toString() + "-" + today.getMonth.toString() + "-" + today.getDate.toString();
+            //document.getElementById("data").max =(today.getFullYear.toString() + "-" + today.getMonth.toString() + "-" + (today.getDate.toString();
+
         },
     }
 }
@@ -26,30 +34,29 @@ const createForm = (elemento) =>{
 //La tebellla avra' una lista del genere: [["data","singola","doppia","suite"],[...]]
 
 const createTable = (parentElement) => {
-    let data = [];
+    let data;
 
     return {
         build: (dataInput) => {
             data = dataInput;
         },
 
-        render: (data) => {
+        render: () => {
             //[["stanza","posti"]]
             let htmlTable = '<table>';
             htmlTable += data.map((row) => 
-                '<tr>' + row.map((col) => 
-                    '<td>' + col + '</td>').join('')+'</tr>').join('');
+                {return ('<tr>' + row.map((col) => '<td>' + col + '</td>').join('')+'</tr>')}).join('');
             htmlTable += '</table>';
-            parentElement.innerHTMl = htmlTable
+            console.log(htmlTable);
+            parentElement.innerHTML = htmlTable;
         },
     };
 };
 
 
-const form=createForm(divForm);
-const table = createTable(document.querySelector('#table'));
+const form =  createForm(divForm);
+const table = createTable(divTable);
 
 form.onsubmit(console.log);
 form.render();
 
-table.build([['Data', 'Singola', 'Doppia', 'Suite']]);

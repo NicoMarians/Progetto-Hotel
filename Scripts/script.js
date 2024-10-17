@@ -14,6 +14,8 @@ class Rooms {
     }
 }
 
+table.build([['Data', 'Singola', 'Doppia', 'Suite']]);
+
 setInterval(() => {
     download();
     table.render();
