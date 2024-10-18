@@ -2,8 +2,8 @@ const divForm=document.getElementById("divForm");
 const divTable=document.getElementById("divTable");
 
 const today = new Date();
-let todayString = today.toLocaleDateString(); //   DD/MM/YYYY
-//let monthString = today+30;
+const todayString = today.toISOString().slice(0,10); //   DD/MM/YYYY
+const monthString = setMaxDate(todayString);
 
 const createForm = (elemento) =>{
     let arrayElement=[["data","date"],["singola","number"],["doppia","number"],["suite","number"]];
@@ -21,8 +21,7 @@ const createForm = (elemento) =>{
                 data= bindingElement.map((element)=>element.value);
                 callback(data);
             }
-            console.log(today.getDate());
-            //document.getElementById("data").min = today.getFullYear.toString() + "-" + today.getMonth.toString() + "-" + today.getDate.toString();
+            document.getElementById("data").min = todayString;
             //document.getElementById("data").max =(today.getFullYear.toString() + "-" + today.getMonth.toString() + "-" + (today.getDate.toString();
 
         },
