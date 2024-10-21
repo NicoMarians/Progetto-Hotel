@@ -4,6 +4,7 @@ const divTable=document.getElementById("divTable");
 const today = new Date();
 const todayString = today.toISOString().slice(0,10); //   DD/MM/YYYY
 const monthString = setMaxDate(todayString);
+console.log(monthString);
 
 const createForm = (elemento) =>{
     let arrayElement=[["data","date"],["singola","number"],["doppia","number"],["suite","number"]];
@@ -53,9 +54,4 @@ const createTable = (parentElement) => {
 };
 
 
-const form =  createForm(divForm);
-const table = createTable(divTable);
-
-form.onsubmit(console.log);
-form.render();
 
