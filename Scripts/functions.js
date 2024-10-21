@@ -19,6 +19,8 @@ const setMaxDate = (date) => {
         }
     }
     let newDate = new Date(parseInt(year),parseInt(month),parseInt(day)).toISOString().slice(0,10);
+    console.log(arrDate,newDate);
+
     return newDate;
 }
 
