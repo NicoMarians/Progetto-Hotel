@@ -6,6 +6,10 @@ form.render();
 
 table.build(dati);
 
+let datiTabella = aggiornaDatiTabella();
+table.build(datiTabella);
+
+
 setInterval(() => {
     //download();
     table.render();
