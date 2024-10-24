@@ -47,7 +47,7 @@ const createTable = (parentElement) => {
         },
 
         render: () => {
-            let htmlTable = '<table class="table">';
+            let htmlTable = '<table class="table table-striped">';
             htmlTable += datiTabella.map((row) => 
                 {return ('<tr>' + row.map((col) => '<td>' + col + '</td>').join('')+'</tr>')}).join('');
             htmlTable += '</table>';
