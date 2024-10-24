@@ -18,7 +18,7 @@ class Rooms {
 const form =  createForm(divForm);
 const table = createTable(divTable);
 
-form.onsubmit(console.log);
+form.onsubmit(download());
 form.render();
 
 table.build([['Data', 'Singola', 'Doppia', 'Suite']]);

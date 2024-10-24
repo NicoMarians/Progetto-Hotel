@@ -1,5 +1,7 @@
 key = "c6423649-0f5c-40c4-9bba-ee114eba20af";
-url = "web.progettimolinari.it/";
+url = "ws.cipiaceinfo.it/";
+
+//{data:room(class)}
 
 function upload(valore) {
     console.log("Upload",valore)
@@ -36,7 +38,7 @@ function upload(valore) {
                     key: 'progettiHotel',
                 }),
             }).then((response) => response.json()).
-            then((r) => resolve(r.result));
+            then((r) => upload(r.result));
         } catch {
             reject()
         }
