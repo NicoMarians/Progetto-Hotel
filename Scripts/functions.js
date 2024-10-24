@@ -19,6 +19,8 @@ const addBooking = (input) => {
         else error = true;
     })
     console.log(newBooking);
-    if (!error) dati.push(newBooking.unshift(input[0]));
+    newBooking.unshift(input[0]);
+    console.log(newBooking);
+    if (!error) dati.push(newBooking);
     else alert("Non ci sono abbastanza camere");
 }
