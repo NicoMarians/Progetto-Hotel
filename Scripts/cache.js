@@ -1,5 +1,5 @@
-key = "c6423649-0f5c-40c4-9bba-ee114eba20af";
-url = "ws.cipiaceinfo.it/";
+let key = "c6423649-0f5c-40c4-9bba-ee114eba20af";
+let url = "ws.cipiaceinfo.it/cache/";
 
 let dati = [["Data","Singola","Doppia","Suite"]];
 const defaultRooms = [100,50,30];
@@ -13,7 +13,7 @@ function upload(valore) {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
-                    key: 'c6423649-0f5c-40c4-9bba-ee114eba20af',
+                    key: '4095a663-3e69-4699-94e7-225f722690bc',
                 },
                 body: JSON.stringify({
                     key: 'progettoHotel',
@@ -34,7 +34,7 @@ function upload(valore) {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
-                    key: 'c6423649-0f5c-40c4-9bba-ee114eba20af',
+                    key: '4095a663-3e69-4699-94e7-225f722690bc',
                 },
                 body: JSON.stringify({
                     key: 'progettiHotel',

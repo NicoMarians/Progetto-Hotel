@@ -22,16 +22,13 @@ const createForm = (elemento) =>{
                 input = bindingElement.map((element)=>{
                     let value = element.value;
                     element.value = null;
-                    return value});
-                let found = false;
-                dati.forEach((day,index) => {
-                    if (day[0] == input[0]){
-                        console.log("Modifying day");
-                        checkRoomAvaliability(input.slice(1),index);
-                        found = true;
-                    }
-                })
-                if (!found) addBooking(input);
+                    return value
+                });
+                //download().then(bottonePremuto(input),console.log);
+                bottonePremuto(input);
+                datiTabella = aggiornaDatiTabella();
+                table.build(datiTabella);
+                table.render();
             }
         },
     }

@@ -45,7 +45,6 @@ const aggiornaDatiTabella = () => {
 
         let found = false;
 
-        /*
         dati.slice(1).forEach((giorno) => {
             console.log(giorno[0]);
             if (giorno[0] == dayString && !found){
@@ -53,11 +52,23 @@ const aggiornaDatiTabella = () => {
                 found = true;
             }
         });
-        */
-        day.push(dayString);
-        defaultRooms.forEach((element) => day.push(element));
-        console.log(day);
-        datiTabella.push(day);
+
+        if (!found){
+            day.push(dayString);
+            defaultRooms.forEach((element) => day.push(element));
+            datiTabella.push(day);
+        }   
     }
     return datiTabella;
+}
+
+const bottonePremuto = (input) => {
+    let found = false;
+    dati.forEach((day,index) => {
+        if (day[0] == input[0]){
+            checkRoomAvaliability(input.slice(1),index);
+            found = true;
+        }
+    })
+    if (!found) addBooking(input);
 }
