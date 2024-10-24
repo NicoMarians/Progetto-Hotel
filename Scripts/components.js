@@ -4,10 +4,12 @@ const divTable=document.getElementById("divTable");
 let today = new Date();
 let todayString = today.toISOString().slice(0,10); //DD/MM/YYYY
 
+const defaultRooms = [100,50,30]
+
 const createForm = (elemento) =>{
     let arrayElement=[["data","date"],["singola","number"],["doppia","number"],["suite","number"]];
+    let input;
     let bindingElement;
-    let data;
     let callback=null;
     return{
         onsubmit: (f) =>{callback=f;},
@@ -16,9 +18,15 @@ const createForm = (elemento) =>{
             elemento.innerHTML=elemento.innerHTML+`<div><button type="button" id="send">invia</button></div>`
             const button=document.getElementById("send");
             button.onclick=() => {
+                //download();
                 bindingElement=arrayElement.map((element)=>document.getElementById(element[0]));
-                data= bindingElement.map((element)=>element.value);
-                callback(data);
+                input = bindingElement.map((element)=>element.value);
+                if (input[0] in Object.keys(data)) data.input[0].checkRoomAvaliability(input.slice(1));
+                else {
+                    addBooking(input[0]);
+                    data.input[0].checkRoomAvaliability(input.slice(1));
+                }
+                console.log(data);
             }
         },
     }
@@ -27,20 +35,18 @@ const createForm = (elemento) =>{
 //La tebellla avra' una lista del genere: [["data","singola","doppia","suite"],[...]]
 
 const createTable = (parentElement) => {
-    let data;
-
+    let datiTabella;
     return {
         build: (dataInput) => {
-            data = dataInput;
+            datiTabella = dataInput;
         },
 
         render: () => {
             //[["stanza","posti"]]
             let htmlTable = '<table class="table">';
-            htmlTable += data.map((row) => 
+            htmlTable += datiTabella.map((row) => 
                 {return ('<tr>' + row.map((col) => '<td>' + col + '</td>').join('')+'</tr>')}).join('');
             htmlTable += '</table>';
-            console.log(htmlTable);
             parentElement.innerHTML = htmlTable;
         },
     };

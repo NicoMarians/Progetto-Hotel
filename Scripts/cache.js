@@ -2,6 +2,7 @@ key = "c6423649-0f5c-40c4-9bba-ee114eba20af";
 url = "ws.cipiaceinfo.it/";
 
 //{data:room(class)}
+let data = {};
 
 function upload(valore) {
     console.log("Upload",valore)
@@ -18,7 +19,7 @@ function upload(valore) {
                     value: valore,  
                 }),
             }).then((response) => response.json())
-            .then((data) => resolve());
+            .then((data) => resolve(data.r));
         } catch {
             reject();
         }
@@ -38,7 +39,7 @@ function upload(valore) {
                     key: 'progettiHotel',
                 }),
             }).then((response) => response.json()).
-            then((r) => upload(r.result));
+            then((r) => resolve(r.result));
         } catch {
             reject()
         }

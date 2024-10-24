@@ -11,7 +11,7 @@ const updateData = (data) => {
 }
 
 const addBooking = (date) => {
-    if (! date in data){
-        data[todayString] = new Rooms(100,70,30);
+    if (! (date in data)){
+        data[date] = new Rooms(100,70,30);
     }
 }

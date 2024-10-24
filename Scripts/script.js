@@ -1,16 +1,18 @@
 class Rooms {
-    constructor(singola,doppia,suite){
-        this.singola = singola;
-        this.doppia = doppia;
-        this.suite = suite;
+    constructor(stanze){
+        this.stanze = stanze // [singola,doppia,suite,...]
     }
-    checkRoomAvaliability = (singola,doppia,suite) => {
+    checkRoomAvaliability = (stanze) => {
         let error = false;
-        if (singola > this.singola) {alert("Non ci sono abbastanza camere singole in questa data");  error = true;}
-        if (doppia > this.doppia) {alert("Non ci sono abbastanza camere singole in questa data");error = true;}
-        if (suite > this.suite) {alert("Non ci sono abbastanza camere singole in questa data");error = true;}
+        this.stanze.forEach((stanza,index) => {
+            if (! (parseInt(stanze[i]) > stanza)) error = true;
+        })
 
-        if (!error) {this.singola -= singola; this.doppia -= doppia; this.suite -= suite;}
+        if (!error) {
+            this.stanze.forEach((stanza,index) => {
+            stanza -= stanze[index];
+            });
+        } else alert("Non ci sono abbastanza camere");
     }
 }
 
@@ -18,7 +20,7 @@ class Rooms {
 const form =  createForm(divForm);
 const table = createTable(divTable);
 
-form.onsubmit(download());
+form.onsubmit(console.log);
 form.render();
 
 table.build([['Data', 'Singola', 'Doppia', 'Suite']]);
