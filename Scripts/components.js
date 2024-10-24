@@ -24,11 +24,8 @@ const createForm = (elemento) =>{
                     element.value = null;
                     return value
                 });
-                //download().then(bottonePremuto(input),console.log);
-                bottonePremuto(input);
-                datiTabella = aggiornaDatiTabella();
-                table.build(datiTabella);
-                table.render();
+                download().then(bottonePremuto(input),console.log);
+                //bottonePremuto(input);
             }
         },
     }

@@ -1,6 +1,3 @@
-let key = "c6423649-0f5c-40c4-9bba-ee114eba20af";
-let url = "ws.cipiaceinfo.it/cache/";
-
 let dati = [["Data","Singola","Doppia","Suite"]];
 const defaultRooms = [100,50,30];
 
@@ -9,7 +6,7 @@ function upload(valore) {
     console.log("Upload",valore)
     return new Promise((resolve,reject) => {
         try{
-            fetch(url + 'set', {
+            fetch("https://ws.cipiaceinfo.it/cache/set", {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -30,7 +27,7 @@ function upload(valore) {
   function download() {
     return new Promise((resolve,reject) => {
         try{
-            fetch(url + 'get', {
+            fetch("https://ws.cipiaceinfo.it/cache/get", {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

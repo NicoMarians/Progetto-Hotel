@@ -59,7 +59,8 @@ const aggiornaDatiTabella = () => {
             datiTabella.push(day);
         }   
     }
-    return datiTabella;
+    table.build(datiTabella);
+    table.render();
 }
 
 const bottonePremuto = (input) => {
@@ -71,4 +72,7 @@ const bottonePremuto = (input) => {
         }
     })
     if (!found) addBooking(input);
+    
+    aggiornaDatiTabella();
+    
 }
