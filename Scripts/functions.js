@@ -15,10 +15,10 @@ const addBooking = (input) => {
     let rooms = input.slice(1);
 
     let newBooking = defaultRooms.map((room,index) => {
-        if (parseInt(rooms[index]) < room) room-parseInt(rooms[index]);
+        if (parseInt(rooms[index]) < room) return room-parseInt(rooms[index]);
         else error = true;
     })
     console.log(newBooking);
-    if (!error) dati.push(newBooking.insert(0,input[0]));
+    if (!error) dati.push(newBooking.unshift(input[0]));
     else alert("Non ci sono abbastanza camere");
 }
