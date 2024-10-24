@@ -1,8 +1,8 @@
 key = "c6423649-0f5c-40c4-9bba-ee114eba20af";
 url = "ws.cipiaceinfo.it/";
 
-//{data:room(class)}
-let data = {};
+let dati = [["Data","Singola","Doppia","Suite"]];
+const defaultRooms = [100,50,30];
 
 
 function upload(valore) {

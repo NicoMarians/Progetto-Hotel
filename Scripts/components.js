@@ -4,7 +4,6 @@ const divTable=document.getElementById("divTable");
 let today = new Date();
 let todayString = today.toISOString().slice(0,10); //DD/MM/YYYY
 
-const defaultRooms = [100,50,30];
 
 const createForm = (elemento) =>{
     let arrayElement=[["data","date"],["singola","number"],["doppia","number"],["suite","number"]];
@@ -21,18 +20,23 @@ const createForm = (elemento) =>{
                 //download();
                 bindingElement=arrayElement.map((element)=>document.getElementById(element[0]));
                 input = bindingElement.map((element)=>element.value);
-                if (input[0] in Object.keys(data)) data.input[0].checkRoomAvaliability(input.slice(1));
-                else {
-                    addBooking(input[0]);
-                    data.input[0].checkRoomAvaliability(input.slice(1));
-                }
-                console.log(data);
+                let found = false;
+                dati.forEach((day) => {
+                    console.log(day[0]);
+                    console.log(input[0]);
+
+                    if (day[0] == input[0]){
+                        checkRoomAvaliability(day.slice(1),input.slice(1))
+                        found = true;
+                    }
+                })
+                if (!found) addBooking(input);
             }
         },
     }
 }
 
-//La tebellla avra' una lista del genere: [["data","singola","doppia","suite"],[...]]
+//La tabellla avra' una lista del genere: [["data","singola","doppia","suite"],[...]]
 
 const createTable = (parentElement) => {
     let datiTabella;
@@ -42,21 +46,11 @@ const createTable = (parentElement) => {
         },
 
         render: () => {
-            console.log(datiTabella);
             let htmlTable = '<table class="table">';
-            Object.keys(datiTabella).map((element) => { 
-                console.log(datiTabella);
-                return ('<tr>' + datiTabella.element.stanze.map((stanza) => '<td>' + stanza + '</td>')).join("")
-            }).join("");
-            
-
-            /*
             htmlTable += datiTabella.map((row) => 
                 {return ('<tr>' + row.map((col) => '<td>' + col + '</td>').join('')+'</tr>')}).join('');
-            */
             htmlTable += '</table>';
-            parentElement.innerHTML = htmlTable;
-            
+            parentElement.innerHTML = htmlTable; 
         },
     };
 };

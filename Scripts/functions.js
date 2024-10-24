@@ -1,30 +1,24 @@
-const checkRoomAvaliability = (giorno,stanze) => {
+
+const checkRoomAvaliability = (day,input) => {
     let error = false;
-    data.giorno.forEach((stanza,index) => {
-        if (! (parseInt(stanze[i]) > stanza)) error = true;
+
+    day.forEach((room,index) => {
+        if (!((room - input[index]) >= 0)) error = true;
     })
-
-    if (!error) {
-        this.stanze.forEach((stanza,index) => {
-        stanza -= stanze[index];
-        });
-    } else alert("Non ci sono abbastanza camere");
+    
+    if (error) alert("Non ci sono abbastanza camere");
+    else day.map((room,index) => room - input[index]);
 }
 
-const updateData = (data) => {
-    let today = null;
-    let todayString = null;
-    for (let i = 0; i < 30 ;i++){
-        today = new Date();
-        todayString = today.toISOString().slice(0,10); //DD/MM/YYYY  
-        if (! todayString in data){
-            addBooking(todayString)
-        }
-    }  
-}
+const addBooking = (input) => {
+    let error = false;
+    let rooms = input.slice(1);
 
-const addBooking = (date) => {
-    if (! (date in data)){
-        data[date] = new Rooms(100,70,30);
-    }
+    let newBooking = defaultRooms.map((room,index) => {
+        if (parseInt(rooms[index]) < room) room-parseInt(rooms[index]);
+        else error = true;
+    })
+    console.log(newBooking);
+    if (!error) dati.push(newBooking.insert(0,input[0]));
+    else alert("Non ci sono abbastanza camere");
 }
