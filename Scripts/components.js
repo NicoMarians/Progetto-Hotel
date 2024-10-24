@@ -24,8 +24,8 @@ const createForm = (elemento) =>{
                     element.value = null;
                     return value
                 });
-                download().then(bottonePremuto(input),console.log);
-                //bottonePremuto(input);
+                //download().then(bottonePremuto(input),console.log);
+                bottonePremuto(input);
             }
         },
     }
