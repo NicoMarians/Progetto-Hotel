@@ -39,7 +39,7 @@ function upload(valore) {
                 body: JSON.stringify({
                     key: 'progettiHotel',
                 }),
-            }).then((response) => response.json()).
+            }).then((r) => r.json()).
             then((r) => resolve(r.result));
         } catch {
             reject()
