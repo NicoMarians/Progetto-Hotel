@@ -1,13 +1,19 @@
 
-const checkRoomAvaliability = (day,input) => {
+const checkRoomAvaliability = (input,indice) => {
     let error = false;
+    let giorno = dati[indice].slice(1);
 
-    day.forEach((room,index) => {
+    giorno.forEach((room,index) => {
         if (!((room - input[index]) >= 0)) error = true;
     })
     
     if (error) alert("Non ci sono abbastanza camere");
-    else day.map((room,index) => room - input[index]);
+    
+    else {
+        let newDay = giorno.map((room,index) => {return (room - input[index])});
+        newDay.unshift(dati[indice][0]);
+        dati[indice] = newDay;
+    }
 }
 
 const addBooking = (input) => {

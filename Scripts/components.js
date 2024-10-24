@@ -19,14 +19,15 @@ const createForm = (elemento) =>{
             button.onclick=() => {
                 //download();
                 bindingElement=arrayElement.map((element)=>document.getElementById(element[0]));
-                input = bindingElement.map((element)=>element.value);
+                input = bindingElement.map((element)=>{
+                    let value = element.value;
+                    element.value = null;
+                    return value});
                 let found = false;
-                dati.forEach((day) => {
-                    console.log(day[0]);
-                    console.log(input[0]);
-
+                dati.forEach((day,index) => {
                     if (day[0] == input[0]){
-                        checkRoomAvaliability(day.slice(1),input.slice(1))
+                        console.log("Modifying day");
+                        checkRoomAvaliability(input.slice(1),index);
                         found = true;
                     }
                 })
