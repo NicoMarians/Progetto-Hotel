@@ -32,7 +32,7 @@ const addBooking = (input) => {
 }
 
 const aggiornaDatiTabella = () => {
-    let datiTabella = [];
+    let datiTabella = [["Data","Singola","Doppia","Suite"]];
     let day;
     
     for (let i = 0; i < 30; i++){
