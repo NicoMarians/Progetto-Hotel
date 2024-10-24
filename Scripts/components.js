@@ -4,7 +4,7 @@ const divTable=document.getElementById("divTable");
 let today = new Date();
 let todayString = today.toISOString().slice(0,10); //DD/MM/YYYY
 
-const defaultRooms = [100,50,30]
+const defaultRooms = [100,50,30];
 
 const createForm = (elemento) =>{
     let arrayElement=[["data","date"],["singola","number"],["doppia","number"],["suite","number"]];
@@ -42,12 +42,21 @@ const createTable = (parentElement) => {
         },
 
         render: () => {
-            //[["stanza","posti"]]
+            console.log(datiTabella);
             let htmlTable = '<table class="table">';
+            Object.keys(datiTabella).map((element) => { 
+                console.log(datiTabella);
+                return ('<tr>' + datiTabella.element.stanze.map((stanza) => '<td>' + stanza + '</td>')).join("")
+            }).join("");
+            
+
+            /*
             htmlTable += datiTabella.map((row) => 
                 {return ('<tr>' + row.map((col) => '<td>' + col + '</td>').join('')+'</tr>')}).join('');
+            */
             htmlTable += '</table>';
             parentElement.innerHTML = htmlTable;
+            
         },
     };
 };

@@ -1,20 +1,7 @@
-class Rooms {
-    constructor(stanze){
-        this.stanze = stanze // [singola,doppia,suite,...]
-    }
-    checkRoomAvaliability = (stanze) => {
-        let error = false;
-        this.stanze.forEach((stanza,index) => {
-            if (! (parseInt(stanze[i]) > stanza)) error = true;
-        })
 
-        if (!error) {
-            this.stanze.forEach((stanza,index) => {
-            stanza -= stanze[index];
-            });
-        } else alert("Non ci sono abbastanza camere");
-    }
-}
+
+data["data"] = new Rooms(["Singola","Doppia","Suite"]);
+
 
 
 const form =  createForm(divForm);
@@ -23,9 +10,9 @@ const table = createTable(divTable);
 form.onsubmit(console.log);
 form.render();
 
-table.build([['Data', 'Singola', 'Doppia', 'Suite']]);
+table.build(data);
 
 setInterval(() => {
-    download();
+    //download();
     table.render();
 },1000);

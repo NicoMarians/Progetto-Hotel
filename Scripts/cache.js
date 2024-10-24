@@ -4,6 +4,7 @@ url = "ws.cipiaceinfo.it/";
 //{data:room(class)}
 let data = {};
 
+
 function upload(valore) {
     console.log("Upload",valore)
     return new Promise((resolve,reject) => {
